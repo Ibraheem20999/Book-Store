@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="منصة متخصصة في الكتب والمراجع التقنية لمهندسي ومطوري البرمجيات. كتب عملية في هندسة النظم، الذكاء الاصطناعي، وتطوير الويب والسحابة.">
+  <title>كتب التقنية | المرجع الهندسي الشامل لمطوري البرمجيات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="logo-area" aria-label="الرئيسية">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text">مكتبة<span>التقنية</span></div>
+      </a>
+
+      <!-- Instant Search -->
+      <div class="search-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="ابحث عن كتاب، موضوع، أو لغة برمجية..." 
+          aria-label="بحث في الكتب"
+          autocomplete="off"
+        >
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav aria-label="القائمة الرئيسية">
+        <ul class="nav-links">
+          <li><a href="#catalog">تصفح الكتب</a></li>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#newsletter">الفصل المجاني</a></li>
+        </ul>
+      </nav>
+
+      <a href="#newsletter" class="btn btn-primary btn-sm">انضم للقراء</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>⚡ إصدارات العام التقنية الجديدة</span>
+        </div>
+        <h1 class="hero-title">
+          ارتقِ بخبرتك الهندسية مع <br>
+          <span class="gradient-text">أفضل المراجع البرمجية المتقدمة</span>
+        </h1>
+        <p class="hero-desc">
+          مجموعة منتقاة بعناية من الكتب والمراجع التخصصية المصممة لمهندسي النظم والمطورين. كتب تركز على الأكواد الواقعية الموجهة للإنتاج الفعلي (Production-Ready) بدون حشو نظري.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-primary">
+            <span>استكشف الكتالوج الكامل</span>
+            <span>←</span>
+          </a>
+          <button id="featured-preview-btn" class="btn btn-secondary">
+            <span>معاينة كتاب الشهر</span>
+            <span>📖</span>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>+50K</h4>
+            <p>قارئ ومهندس تقني</p>
+          </div>
+          <div class="stat-item">
+            <h4>4.9/5</h4>
+            <p>تقييم الجودة والتطبيق</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>كود ومشاريع مفتوحة</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Featured Book Showcase -->
+      <div class="featured-showcase">
+        <div class="featured-glow"></div>
+        <div class="book-3d-wrapper">
+          <div class="book-3d" id="hero-book-3d">
+            <!-- Spine -->
+            <div class="book-spine"></div>
+            <!-- Pages effect -->
+            <div class="book-pages-side"></div>
+            <!-- Cover -->
+            <div class="book-cover" style="background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);">
+              <div class="cover-badge">كتاب الشهر المميز</div>
+              <div class="cover-center">
+                <div class="cover-tech-icon">🏛️</div>
+                <h3 class="cover-title">هندسة النظم الموزعة الفائقة</h3>
+                <p class="cover-subtitle">Distributed Systems at Scale</p>
+              </div>
+              <div class="cover-footer">
+                <span>تأليف: د. طارق المنصور</span>
+                <span>طبعة 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter Bar -->
+  <section class="filter-section" id="catalog">
+    <div class="container">
+      <div class="filter-chips-wrapper" id="filter-chips" role="tablist" aria-label="تصنيفات الكتب">
+        <button class="filter-chip active" data-category="all" role="tab" aria-selected="true">
+          <span>الكل</span>
+          <span class="chip-count" id="count-all">0</span>
+        </button>
+        <button class="filter-chip" data-category="ai" role="tab" aria-selected="false">
+          <span>الذكاء الاصطناعي &amp; ML</span>
+          <span class="chip-count" id="count-ai">0</span>
+        </button>
+        <button class="filter-chip" data-category="system-design" role="tab" aria-selected="false">
+          <span>هندسة النظم &amp; Backend</span>
+          <span class="chip-count" id="count-system-design">0</span>
+        </button>
+        <button class="filter-chip" data-category="frontend" role="tab" aria-selected="false">
+          <span>تطوير الواجهات &amp; Web</span>
+          <span class="chip-count" id="count-frontend">0</span>
+        </button>
+        <button class="filter-chip" data-category="devops" role="tab" aria-selected="false">
+          <span>السحابة &amp; DevOps</span>
+          <span class="chip-count" id="count-devops">0</span>
+        </button>
+        <button class="filter-chip" data-category="security" role="tab" aria-selected="false">
+          <span>الأمن السيبراني &amp; SecOps</span>
+          <span class="chip-count" id="count-security">0</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Grid Section -->
+  <section class="books-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">المكتبة التقنية المختارة</h2>
+          <p class="section-desc" id="results-count-text">عرض جميع الإصدارات والمراجع المتاحة</p>
+        </div>
+      </div>
+
+      <!-- Books Grid (Populated dynamically via app.js) -->
+      <div class="books-grid" id="books-grid" aria-live="polite">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us / Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+        <span class="badge badge-level">معايير المحتوى الهندسي</span>
+        <h2 class="section-title" style="margin-top: 0.75rem;">لماذا يفضل المطورون مراجعنا؟</h2>
+        <p class="section-desc">صممت جميع الكتب وفق معايير هندسية تضمن التطبيق الفعلي في بيئات الإنتاج الحقيقية.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">💻</div>
+          <h3>أكواد إنتاجية كاملة (Production-Ready)</h3>
+          <p>جميع الأمثلة البرمجية في الكتب مأخوذة من أنظمة معقدة حقيقية، ومتاحة عبر مستودعات GitHub مفتوحة ومجربة بالكامل.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">🔄</div>
+          <h3>تحديثات مستمرة لكل طبعة</h3>
+          <p>تحصل مع كل كتاب على التحديثات الرقمية المستمرة مع تغير إصدارات الأطر واللغات، لتبقى معلوماتك مواكبة دائماً.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">🛡️</div>
+          <h3>مراجعة من كبار مهندسي التقنية</h3>
+          <p>تتم مراجعة فصول الكتب واعتمادها من قبل مهندسين ومستشارين تقنيين يعملون في شركات برمجية رائدة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Sample Section -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <span class="badge badge-level" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.3);">هدية القارئ التقني</span>
+          <h2 class="section-title" style="margin: 0.75rem 0;">احصل على فصول وعينات مجانية كل شهر</h2>
+          <p class="section-desc">اشترك لتصلك مقتطفات وفهارس الكتب الجديدة وملخصات معمارية النظم مباشرة إلى بريدك الإلكتروني.</p>
+          
+          <form class="newsletter-form" id="newsletter-form">
+            <input 
+              type="email" 
+              class="newsletter-input" 
+              id="newsletter-email" 
+              placeholder="أدخل بريدك الإلكتروني (مثل: dev@company.com)" 
+              required
+              aria-label="البريد الإلكتروني"
+            >
+            <button type="submit" class="btn btn-primary">اشترك الآن مجاناً</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="logo-area">
+          <div class="logo-icon">&lt;/&gt;</div>
+          <div class="logo-text">مكتبة<span>التقنية</span></div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">منصة ومكتبة رقمية متخصصة في الكتب البرمجية والهندسية عالية الدقة.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 مكتبة التقنية. جميع الحقوق محفوظة.</p>
+        <p style="direction: ltr; font-family: var(--font-mono);">Engineered for software craftsmen &amp; builders.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive "Look Inside" Modal -->
+  <div class="modal-overlay" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-book-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-level" id="modal-category-badge">معاينة المحتوى</span>
+          <h3 class="modal-title" id="modal-book-title" style="margin-top: 0.25rem;">عنوان الكتاب</h3>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="إغلاق النافذة">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Filled dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite">
+    <span id="toast-icon">✓</span>
+    <span id="toast-message">تمت العملية بنجاح!</span>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
